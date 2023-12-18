@@ -30,6 +30,7 @@ typedef struct smmObject {
        int type;
        int credit;
        int energy;
+       char lecture_name[MAX_CHARNAME];
        smmObjGrade_e grade;
 } smmObject_t;
 
@@ -82,4 +83,11 @@ int smmObj_getNodeEnergy(void* obj)
 	smmObject_t* ptr = (smmObject_t*)obj;
     
     return ptr->energy;
+}
+
+smmObjGrade_e smmObj_getNodeGrade(void* obj)
+{
+	smmObject_t* ptr = (smmObject_t*)obj;
+    
+    return ptr->grade;
 }
